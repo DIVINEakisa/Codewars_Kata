@@ -1,5 +1,8 @@
 // Description:
-// The makeLooper() function (or make_looper in your language) takes a string (of non-zero length) as an argument. It returns a function. The function it returns will return successive characters of the string on successive invocations. It will start back at the beginning of the string once it reaches the end.
+// The makeLooper() function
+// (or make_looper in your language)
+//  takes a string (of non-zero length)
+//  as an argument. It returns a function. The function it returns will return successive characters of the string on successive invocations. It will start back at the beginning of the string once it reaches the end.
 
 // For example:
 
