@@ -14,7 +14,20 @@
 // ""
 
 function generateHashtag(str) {
-  let word = str.split("");
-  return word;
+  let sent = str
+    .split(" ")
+    .filter((word) => word.length > 0)
+    .map((char) => char[0].toUpperCase() + char.slice(1))
+    .join("");
+  let res = sent ? "#" + sent : false;
+
+  return res.length <= 140 ? res : false;
 }
 console.log(generateHashtag(" Hello there thanks for trying my Kata"));
+console.log(generateHashtag("    Hello     World   "));
+console.log(generateHashtag(""));
+console.log(
+  generateHashtag(
+    "Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"
+  )
+);
