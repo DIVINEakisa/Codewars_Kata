@@ -38,3 +38,17 @@ function isPrime(number) {
   }
   return true;
 }
+function getPrimes(start, finish) {
+  const primes = [];
+
+  const min = Math.min(start, finish);
+  const max = Math.max(start, finish);
+
+  for (let i = min; i <= max; i++) {
+    if (isPrime(i)) {
+      primes.push(i);
+    }
+  }
+
+  return primes;
+}
