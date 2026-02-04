@@ -26,3 +26,15 @@
 // getPrimes(0, 0); // === []
 // getPrimes(0, 30); // === [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 // getPrimes(30, 0); // === [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]a
+function isPrime(number) {
+  if (number <= 1) return false;
+  if (number === 2) return true;
+  if (number % 2 === 0) return false;
+
+  for (let i = 3; i <= Math.sqrt(number); i += 2) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
