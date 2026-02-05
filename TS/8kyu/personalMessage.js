@@ -5,6 +5,11 @@
 // case	return
 // name equals owner	'Hello boss'
 // otherwise	'Hello guest'
-function greet(name, owner) {
-  return name === owner ? "Hello boss" : "Hello guest";
+export function greet(name: string, owner: string): string{
+   if(name === owner){
+     return "Hello boss";
+   }else{
+     return "Hello guest";
+   }
+      
 }
