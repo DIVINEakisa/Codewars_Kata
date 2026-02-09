@@ -10,3 +10,11 @@
 // -1050  -> -105
 // 0      -> 0
 // Note: Zero should be left as it is.
+
+export function noBoringZeros(n: number): number {
+  let num: string = n.toString();
+  while (num.endsWith("0")) {
+    num = num.slice(0, -1);
+  }
+  return Number(num);
+}
