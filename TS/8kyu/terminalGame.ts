@@ -6,3 +6,5 @@ export function combat(health: number, damage: number): number {
 
   return health - damage;
 }
+
+console.log(combat(54, 10));
