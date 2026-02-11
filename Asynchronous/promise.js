@@ -4,3 +4,9 @@
 
 //   return / / ? '' : (() => 'Hello World!')();
 // }
+function promiseHelloWorld() {
+  return new Promise((resolve) => {
+    resolve("Hello World!");
+  });
+}
+promiseHelloWorld().then((response) => console.log(response));
