@@ -7,3 +7,9 @@
 //    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
 // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29
+
+export const digitalRoot = (n: number): number => {
+  // your code here
+  if (n < 0) return 0;
+  return 1 + ((n - 1) % 9);
+};
