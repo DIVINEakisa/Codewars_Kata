@@ -4,3 +4,6 @@
 // var b == "wa.rs";
 // export var name == a + b;
 var a = "code";
+var b = "wa.rs";
+export var name = a + b;
+console.log(name);
