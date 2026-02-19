@@ -7,3 +7,15 @@
 export function isPair(arr: any[]): arr is [any, any] {
   return arr.length === 2;
 }
+
+function swap(x: [any, any]): [any, any] {
+  const [a, b] = x;
+  return [b, a];
+}
+
+function swapIfPair(x: any[]): any[] {
+  return isPair(x) ? swap(x) : x;
+}
+
+console.log(swapIfPair([1, 2]));
+console.log(swapIfPair([1, 2, 3]));
