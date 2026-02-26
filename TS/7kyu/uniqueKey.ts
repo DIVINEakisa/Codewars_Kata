@@ -35,3 +35,14 @@
 // Since , {-282 , 818 , 900 , 928 } is the even numbers here , So it came first in ascending order , then the odds in descending order { 281 , 49 , -1 }
 
 // Since , (Duplications are not included when separating) , then you can see only one (-282) was appeared in the final array/list .
+export function menFromBoys(arr: number[]): number[] {
+  const unique = Array.from(new Set(arr));
+
+  const men = unique.filter((n) => n % 2 === 0).sort((a, b) => a - b);
+  const boys = unique.filter((n) => n % 2 !== 0).sort((a, b) => b - a);
+
+  return [...men, ...boys];
+}
+
+console.log(menFromBoys([7, 3, 14, 17]));
+console.log(menFromBoys([2, 43, 95, 90, 37]));
