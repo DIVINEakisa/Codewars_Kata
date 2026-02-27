@@ -14,5 +14,31 @@
 
 // Hint: Make a call to super, passing in the correct arguments, to make life easier ;)
 
-// Articles of Interest
-// Below are some articles of interest that may help you complete this Kata:
+
+export class Cuboid {
+ 
+  length:number;
+  width:number;
+  height:number;
+  constructor(length:number,width:number,height:number){
+    this.length = length;
+    this.width = width;
+    this.height = height;
+  }
+
+  get surfaceArea(){
+    return 2*(this.length * this.width + this.length * this.height + this.width * this.height);
+  }
+  get volume(){
+    return this.length * this.width * this.height;
+  }
+  
+}
+
+export class Cube extends Cuboid {
+  constructor(length:number){
+  
+    super(length,length,length)
+  }
+  
+}
