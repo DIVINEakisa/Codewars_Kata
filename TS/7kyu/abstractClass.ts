@@ -67,3 +67,28 @@
 // Your task is to implement these classes. Boa, Parrot and Monkey must convert to each other correctly.
 
 // Have fun! )
+export abstract class Animal {
+  protected constructor(public value: number) {}
+
+  convertTo(someone: Animal): number {
+    return this.value / someone.value;
+  }
+}
+
+export class Boa extends Animal {
+  constructor() {
+    super(1);
+  }
+}
+
+export class Parrot extends Animal {
+  constructor() {
+    super(1 / 38);
+  }
+}
+
+export class Monkey extends Animal {
+  constructor() {
+    super(1 / 5);
+  }
+}
