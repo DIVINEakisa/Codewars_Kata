@@ -5,3 +5,17 @@
 // Additionally, if the number is negative, return 0.
 
 // Note: If a number is a multiple of both 3 and 5, only count it once.
+export class Challenge {
+  static solution(num: number) {
+    let both: number[] = [];
+    if (num <= 0) return 0;
+    for (let i = 1; i <= num - 1; i++) {
+      if (i % 3 === 0 || i % 5 === 0) {
+        both.push(i);
+      }
+    }
+    return both.reduce((a, b) => a + b, 0);
+  }
+}
+let result = Challenge.solution(10);
+console.log(result);
