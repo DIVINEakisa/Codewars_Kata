@@ -24,3 +24,30 @@
 // toggleMultipleBits(5, 3) => 6
 // Notes
 // All functions should return the resulting number (or a boolean for isBitSet).
+export function toggleBit(num: number, position: number): number {
+  return num ^ (1 << position);
+}
+
+export function setBit(num: number, position: number): number {
+  return num | (1 << position);
+}
+
+export function clearBit(num: number, position: number): number {
+  return num & ~(1 << position);
+}
+
+export function isBitSet(num: number, position: number): boolean {
+  return (num & (1 << position)) !== 0;
+}
+
+export function setMultipleBits(num: number, mask: number): number {
+  return num | mask;
+}
+
+export function clearMultipleBits(num: number, mask: number): number {
+  return num & ~mask;
+}
+
+export function toggleMultipleBits(num: number, mask: number): number {
+  return num ^ mask;
+}
