@@ -36,3 +36,17 @@
 // Your task is to create function intersect which returns object with properties that are present simultaneously in T and U.
 
 // P.S. Solved this kata? Take a look at other katas in "Learning TypeScript" collection.
+export function intersect<T extends object, U extends object>(
+  first: T,
+  second: U,
+): Partial<T & U> {
+  let result: Partial<T & U> = {};
+
+  for (let key in first) {
+    if (key in second) {
+      (result as any)[key] = (first as any)[key];
+    }
+  }
+
+  return result;
+}
