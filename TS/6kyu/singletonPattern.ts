@@ -12,3 +12,20 @@
 // Your task is to implement SingletonCounter class with static method getInstance that returns instance of SingletonCounter. Constructor of this class must be declared as private. This class should have inc() which increments the value of the counter (default value of the counter is zero).
 
 // P.S. Solved this kata? Take a look at other katas in "Learning TypeScript" collection.
+
+export class SingletonCounter {
+  counter: number = 0;
+  private static instance: SingletonCounter | null = null;
+  private constructor() {}
+
+  static getInstance() {
+    if (this.instance === null) {
+      this.instance = new SingletonCounter();
+    }
+    return this.instance;
+  }
+  inc(): number {
+    this.counter++;
+    return this.counter;
+  }
+}
