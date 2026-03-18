@@ -46,3 +46,23 @@
 // Examples
 // for n = 1234567 it calculates 178, then 87, then 87 and returns 87.
 // for n = 321 it calculates 48, 48 and returns 48
+
+export function thirt(n: number): number {
+  const seq = [1, 10, 9, 12, 3, 4];
+  let prev = -1;
+
+  while (n !== prev) {
+    prev = n;
+
+    const digits = n.toString().split("").reverse();
+    let sum = 0;
+
+    for (let i = 0; i < digits.length; i++) {
+      sum += Number(digits[i]) * seq[i % seq.length];
+    }
+
+    n = sum;
+  }
+
+  return n;
+}
