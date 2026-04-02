@@ -19,3 +19,13 @@
 
 // Hint
 // You could try to simplify the expression.
+export function going(n: number): number {
+  let term = 1;
+  let sum = 1;
+
+  for (let i = n; i > 1; i--) {
+    term = term / i;
+    sum += term;
+  }
+  return Math.floor(sum * 1e6) / 1e6;
+}
