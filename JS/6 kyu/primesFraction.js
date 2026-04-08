@@ -13,3 +13,33 @@
 // 2/3 + 2/5 + 3/5 = 1.6667    // integer part: 1
 
 // Thus, the function should return [3, 1].
+
+const primePrimes = (n) => {
+  const primes = [];
+
+  for (let i = 2; i < n; i++) {
+    let isPrime = true;
+
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      primes.push(i);
+    }
+  }
+
+  let count = 0;
+  let sum = 0;
+
+  for (let i = 0; i < primes.length; i++) {
+    for (let j = i + 1; j < primes.length; j++) {
+      count++;
+      sum += primes[i] / primes[j];
+    }
+  }
+  return [count, Math.floor(sum)];
+};
