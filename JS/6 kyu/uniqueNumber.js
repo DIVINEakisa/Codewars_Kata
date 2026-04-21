@@ -4,3 +4,11 @@
 
 // Example
 // [ 1, 8, 4, 4, 6, 1, 8 ]  -->  6
+
+function findUnique(numbers) {
+  let result = 0;
+  for (let num of numbers) {
+    result ^= num;
+  }
+  return result;
+}
