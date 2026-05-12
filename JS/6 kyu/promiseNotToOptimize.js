@@ -15,3 +15,13 @@
 // So now your task is to write the function antiOptimizeAsync, which takes a single parameter task (a function), and immediately returns a Promise that only resolves to the return value of task() at least 11 seconds (and at most 12 seconds) after antiOptimizeAsync is called.
 
 // task will always be an arbitrary function that might run for any duration between 0 to 10 seconds.
+
+function antiOptimizeAsync(task) {
+  const taskPromise = Promise.resolve().then(task);
+
+  const delayPromise = new Promise((resolve) => {
+    setTimeout(resolve, 11000);
+  });
+
+  return Promise.all([taskPromise, delayPromise]).then(([result]) => result);
+}
